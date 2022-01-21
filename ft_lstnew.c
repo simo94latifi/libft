@@ -6,7 +6,7 @@
 /*   By: mlatifi <mlatifi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 13:26:33 by mlatifi           #+#    #+#             */
-/*   Updated: 2022/01/21 19:22:06 by mlatifi          ###   ########.fr       */
+/*   Updated: 2022/01/21 20:09:21 by mlatifi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstnew(void *content)
 	t_list	*new;
 
 	new = malloc(sizeof(t_list));
-	if(!new)
+	if (!new)
 		return (NULL);
 	new->content = content;
 	new->next = NULL;
