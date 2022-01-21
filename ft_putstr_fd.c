@@ -6,7 +6,7 @@
 /*   By: mlatifi <mlatifi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 17:27:00 by mlatifi           #+#    #+#             */
-/*   Updated: 2022/01/21 15:32:13 by mlatifi          ###   ########.fr       */
+/*   Updated: 2022/01/21 19:39:34 by mlatifi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
+	if(!s || !fd)
+		return ;
 	i = 0;
 	while (s[i] != '\0')
 	{

@@ -6,7 +6,7 @@
 /*   By: mlatifi <mlatifi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 18:51:05 by mlatifi           #+#    #+#             */
-/*   Updated: 2022/01/21 15:51:48 by mlatifi          ###   ########.fr       */
+/*   Updated: 2022/01/21 19:02:38 by mlatifi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,16 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	n_counter;
-	unsigned char	*cs1;
-	unsigned char	*cs2;
+	size_t	i;
 
-	cs1 = (unsigned char *)s1;
-	cs2 = (unsigned char *)s2;
-	if (n == 0)
-		return (0);
-	n_counter = 0;
-	while (n_counter < n)
+	i = 0;
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{
-		if (cs1[n_counter] - cs2[n_counter] != 0)
+		if (s1[i] != s2[i])
 		{
-			return (cs1[n_counter] - cs2[n_counter]);
+			return ((unsigned char)(s1[i]) - (unsigned char)(s2[i]));
 		}
-		n_counter++;
+		i++;
 	}
 	return (0);
 }

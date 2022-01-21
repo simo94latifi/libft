@@ -6,7 +6,7 @@
 /*   By: mlatifi <mlatifi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 19:39:25 by mlatifi           #+#    #+#             */
-/*   Updated: 2022/01/21 15:09:22 by mlatifi          ###   ########.fr       */
+/*   Updated: 2022/01/21 19:06:01 by mlatifi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,25 @@
 
 int	ft_atoi(const char *str)
 {
-	int	neg;
-	int	i;
-	int	num;
+	size_t	c;
+	int		s;
+	int		res;
 
-	i = 0;
-	neg = 1;
-	num = 0;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
-		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	c = 0;
+	s = 1;
+	res = 0;
+	while ((str[c] >= 9 && str[c] <= 13) || str[c] == 32)
+		c++;
+	if (str[c] == '+' || str[c] == '-')
 	{
-		if (str[i] == '-')
-			neg *= -1;
-		i++;
+		if (str[c] == '-')
+			s *= -1;
+		c++;
 	}
-	while (str[i] >= 48 && str[i] <= 57)
+	while (str[c] >= '0' && str[c] <= '9')
 	{
-		num = num * 10 + (str[i] - 48);
-		i++;
+		res = (str[c] - '0') + (res * 10);
+		c++;
 	}
-	return (num * neg);
+	return (res * s);
 }
